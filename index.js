@@ -2,51 +2,51 @@ playBackgroundMusic();
 const imageArray=[
     {
         name:"barney",
-        url:"/img/F Barney.png"
+        url:"/img/Barney.png"
     },
     {
         name:"bamm",
-        url:"/img/F Bamm.png"
+        url:"/img/Bamm.png"
     },
     {
         name:"fed",
-        url:"/img/F Fred.png"
+        url:"/img/Fred.png"
     },
     {
         name:"slate",
-        url:"/img/F Slate.png"
+        url:"/img/Slate.png"
     },
     {
         name:"wilma",
-        url:"/img/F Wilma.png"
+        url:"/img/Wilma.png"
     },
     {
         name:"betty",
-        url:"/img/F Betty.png"
+        url:"/img/Betty.png"
     },
     {
         name:"barney",
-        url:"/img/F Barney.png"
+        url:"/img/Barney.png"
     },
     {
         name:"bamm",
-        url:"/img/F Bamm.png"
+        url:"/img/Bamm.png"
     },
     {
         name:"fred",
-        url:"/img/F Fred.png"
+        url:"/img/Fred.png"
     },
     {
         name:"slate",
-        url:"/img/F Slate.png"
+        url:"/img/Slate.png"
     },
     {
         name:"wilma",
-        url:"/img/F Wilma.png"
+        url:"/img/Wilma.png"
     },
     {
         name:"betty",
-        url:"/img/F Betty.png"
+        url:"/img/Betty.png"
     },
 ]
 
@@ -57,13 +57,13 @@ let incorrectOpendCount=0;
 imageArray.sort(()=>0.5-Math.random());
 const gridDisplay= document.querySelector('#grid');
 // gridDisplay.addEventListener(onclick,alert('hello2'))
-console.log(imageArray)
+// console.log(imageArray)
 function createGameBox(){
     imageArray.forEach((image,index)=>{
         const card=document.createElement('img');
         card.setAttribute('data-id',index);
         card.addEventListener('click',flipCard)
-        card.setAttribute('src','/img/stone1.png');
+        card.setAttribute('src','/img/Q.png');
         gridDisplay.appendChild(card);
     })
 }
@@ -71,7 +71,7 @@ createGameBox();
 
 async function flipCard(){
     // let image=imageArray[cardId];
-    console.log(this)
+    // console.log(this)
     if(this.classList.contains('hide')) return
     if((document.getElementsByClassName('opened')).length >= 2) return;
     playSound('flip');
@@ -79,13 +79,13 @@ async function flipCard(){
     this.setAttribute('src',imageArray[this.getAttribute('data-id')].url);
     this.classList.add('opened');
     openedCardCount++;
-    console.log(openedCardCount)
+    // console.log(openedCardCount)
     if(openedCardCount==2){
         await new Promise(resolve => setTimeout(resolve, 500));
         let opendCardList = document.getElementsByClassName('opened')
         let firstCard=opendCardList[0];
         let secondCard=opendCardList[1];
-        console.log(firstCard,secondCard)
+        // console.log(firstCard,secondCard)
         if(firstCard.getAttribute('src')===secondCard.getAttribute('src')){
             if(correctOpenedCount!=10)playSound('match');
             firstCard.classList.add('hide');
@@ -93,17 +93,17 @@ async function flipCard(){
             correctOpenedCount++;
         }else{
             playSound('unmatch');
-            firstCard.setAttribute('src','img/stone1.png');
-            secondCard.setAttribute('src','img/stone1.png');
+            firstCard.setAttribute('src','img/Q.png');
+            secondCard.setAttribute('src','img/Q.png');
             incorrectOpendCount++;
         }
         firstCard.classList.remove('opened');
         secondCard.classList.remove('opened');
         openedCardCount=0;
-        console.log("correct count: ",correctOpenedCount)
+        // console.log("correct count: ",correctOpenedCount)
         if(correctOpenedCount==6){
             playSound('game-over');
-            document.getElementById('final-score').innerText=Math.round(100/totalOpenedCount*6)+" %";
+            document.getElementById('final-score').innerText=Math.round(100/totalOpenedCount*12)+" %";
             document.getElementById('game-over-box').style.display ='flex'
             document.getElementById('restart-button').style.display ='none'      
         }
@@ -114,9 +114,9 @@ async function flipCard(){
 };
 
 async function waitTime(time) {
-    console.log('Do something');
+    // console.log('Do something');
     await new Promise(resolve => setTimeout(resolve, time));
-    console.log('Do something after 2 seconds');
+    // console.log('Do something after 2 seconds');
 };
 function restartGame(){
     location.reload();
