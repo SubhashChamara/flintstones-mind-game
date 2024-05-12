@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Game 1.0.0</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <!-- <h2>Mind Map</h2> -->
+    <div style="height: 100vh;width: 100%;display: flex;justify-content: center;align-items: center;margin:0;">
+        <div id="grid"></div>
+    </div>
+    <div id="score-box">
+        <!-- <div>
+            <span>Turns</span>
+            <span id="turns">0</span>
+        </div> -->
+        <div class="scorebox" style="position: relative;">
+            <img src="/img/button.png" alt="play">
+            <div style="position: absolute; left: 10%;top: 25%;display: flex;justify-content: space-between;width: 80%;">
+                <div>Turns</div>
+                <div id="turns">0</div>
+            </div>
+        </div>
+        <div class="scorebox" style="position: relative;">
+            <img src="/img/button.png" alt="play">
+            <div style="position: absolute; left: 10%;top: 25%;display: flex;justify-content: space-between;width: 80%;">
+                <div>Matches</div>
+                <div id="matches">0</div>
+            </div>
+        </div>
+        <div class="scorebox" style="position: relative;">
+            <img src="/img/button.png" alt="play">
+            <div style="position: absolute; left: 10%;top: 25%;display: flex;justify-content: space-between;width: 80%;">
+                <div>Unmatches</div>
+                <div id="umatches">0</div>
+            </div>
+        </div>
+    </div>
+    <div id="restart-button" style="position: absolute;bottom: 1%;right: 1%;">
+        <div class="play" style="position: relative;" onclick="restartGame()">
+            <img src="/img/button.png" alt="play">
+            <span style="position: absolute;left: 25%;top: 25%;">Restart</span>
+        </div>
+    </div>
+    <div id="game-over-box" style="display: none;">
+        <div style="font-size: 72px;">Game Over</div>
+        <div style="font-size: 40px;">Your Score</div>
+        <div id="final-score" style="font-size: 32px;">0</div>
+        <div class="play" style="position: relative;" onclick="restartGame()">
+            <img src="/img/button.png" alt="play">
+            <span style="position: absolute;left: 25%;top: 25%;">Play Again</span>
+        </div>
+    </div>
+</body>
+</html>

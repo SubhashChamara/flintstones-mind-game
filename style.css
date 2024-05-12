@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url("img/cover.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    font-family: 'stone';
+    /* flex-direction: column; */
+}
+.hide{
+    opacity: 0;
+}
+.dnone{
+    display: none;
+}
+.d-block{
+    display: block;
+}
+#grid{
+    display: grid;
+    width: 700px;
+    grid-template-columns: auto auto  auto auto;
+    margin: auto;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+#score-box{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+.flintstones-text {
+    font-family: 'Yabba Dabba Doo', cursive;
+    font-size: 36px;
+}
+.play{
+    width: 15vw;
+    height: 10vh;
+    color: rgba(7, 6, 6, 0.829);
+    cursor: pointer;
+}
+.play img{
+    height: 100%;
+    width: 100%;
+}
+.scorebox{
+    width: 15vw;
+    height: 10vh;
+    color: rgba(7, 6, 6, 0.829);
+}
+.scorebox img{
+    height: 100%;
+    width: 100%;
+}
+/* #score-box > div{ */
+    /* position: relative; */
+    /* height: 6vh;
+    width: 15vw ;
+    border-radius: 5px;
+    padding: 1vh 1vw;
+    background-color:rgba(20, 12, 6, 0.8);
+    background-image: url('/img/button.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid rgb(89, 71, 90);
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; */
+/* } */
+#game-over-box{
+    position: absolute;
+    background-color:  #eef0faad;
+    padding: 5vh 5vw;
+    border-radius: 8px;
+    top: 25vh;
+    left: 28vw;
+    font-family: 'stone';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #582d13
+}
+#restart-button :hover{
+    scale: 1.005;
+}
+.play :hover{
+    scale: 1.005;
+}
+@font-face {
+    font-family: 'stone';
+    src: url('fonts/stone-age-font/StoneAge-OV4AO.ttf'),
+    /* Add additional font formats if necessary */
+}
+
