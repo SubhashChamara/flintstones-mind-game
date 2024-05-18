@@ -1,50 +1,50 @@
 playBackgroundMusic();
 const imageArray=[
-    {
+    {   id:1,
         name:"barney",
         url:"/img/Barney.png"
     },
-    {
+    {   id:2,
         name:"bamm",
         url:"/img/Bamm.png"
     },
-    {
+    {   id:3,
         name:"fed",
         url:"/img/Fred.png"
     },
-    {
+    {   id:4,
         name:"slate",
         url:"/img/Slate.png"
     },
-    {
+    {   id:5,
         name:"wilma",
         url:"/img/Wilma.png"
     },
-    {
+    {   id:6,
         name:"betty",
         url:"/img/Betty.png"
     },
-    {
+    {   id:7,
         name:"barney",
         url:"/img/Barney.png"
     },
-    {
+    {   id:8,
         name:"bamm",
         url:"/img/Bamm.png"
     },
-    {
+    {   id:9,
         name:"fred",
         url:"/img/Fred.png"
     },
-    {
+    {   id:10,
         name:"slate",
         url:"/img/Slate.png"
     },
-    {
+    {   id:11,
         name:"wilma",
         url:"/img/Wilma.png"
     },
-    {
+    {   id:12,
         name:"betty",
         url:"/img/Betty.png"
     },
@@ -72,7 +72,7 @@ createGameBox();
 async function flipCard(){
     // let image=imageArray[cardId];
     // console.log(this)
-    if(this.classList.contains('hide')) return
+    if(this.classList.contains('hide')||this.classList.contains('opened')) return
     if((document.getElementsByClassName('opened')).length >= 2) return;
     playSound('flip');
     totalOpenedCount++;
@@ -85,6 +85,7 @@ async function flipCard(){
         let opendCardList = document.getElementsByClassName('opened')
         let firstCard=opendCardList[0];
         let secondCard=opendCardList[1];
+        
         // console.log(firstCard,secondCard)
         if(firstCard.getAttribute('src')===secondCard.getAttribute('src')){
             if(correctOpenedCount!=10)playSound('match');
